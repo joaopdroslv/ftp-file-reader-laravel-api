@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main-container {
+    width: 800px;
+    height: 600px;
+    background: #222344;
+    margin: 100 auto;
+    border-radius: 10px;
+
+    padding: 30px;
+}
+
+.wrapper {
+    width: 400px;
+    position: relative;
+}
+
+.select-btn, .options li {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.select-btn {
+    height: 40px;
+    font-size: 17px;
+    padding: 0 20px;
+    border-radius: 7px;
+    background: #fff;
+    cursor: pointer;
+    justify-content: space-between;
+}
+
+.select-btn i {
+    font-size: 30px;
+    transition: transform 0.3s linear;
+}
+
+.wrapper.active .select-btn i {
+    transform: rotate(-180deg);
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    border-radius: 7px;
+    background: #fff;
+    position: absolute; /* Permite que o .content fique sobreposto */
+    margin-top: 10px;
+    top: 100%; /* Posiciona abaixo do .select-btn */
+    left: 0;
+    width: 100%; /* Garante que o conteúdo ocupe toda a largura do wrapper */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destacar */
+    z-index: 9999; /* Garante que fique acima de outros elementos */
+}
+
+.wrapper.active .content {
+    display: block;
+}
+
+.content .search {
+    position: relative;
+}
+
+.search i {
+    left: 15px;
+    color: #999;
+    font-size: 17px;
+    line-height: 40px;
+    position: absolute;
+}
+
+.search input {
+    height: 40px;
+    width: 100%;
+    outline: none;
+    font-size: 17px;
+    border-radius: 5px;
+    padding: 0 15px 0 43px;
+    border: 1px solid #b3b3b3;
+}
+
+.content .options {
+    margin-top: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 7px;
+    padding-left: 0px;
+}
+
+.options::-webkit-scrollbar {
+    width: 7px;
+}
+
+.options::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+
+.options::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 25px;
+}
+
+.options li {
+    margin-left: 0;
+    height: 40px;
+    padding: 0 13px;
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+.options li:hover, .selected {
+    background: #f2f2f2;
+}
+
+label {
+    color: white;
+}
